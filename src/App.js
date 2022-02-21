@@ -1,24 +1,54 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import React from "react";
+import SideBarMenu from "./components/screens/SideBarMenu";
+import { makeStyles } from "@material-ui/core/styles";
+import { CssBaseline, Grid } from "@mui/material";
+import { useDispatch } from "react-redux";
+import DashBoard from "./components/screens/DashBoard";
+import { Routes, Route, Navigate, Link } from "react-router-dom";
+import Login from "./components/screens/Login";
+import GoogleAuth from "./components/screens/GoogleAuth";
+import LoginDemo from "./components/screens/LoginDemo";
 
-function App() {
+const useStyles = makeStyles((theme) => ({
+  appMain: {
+    paddingLeft: "320px",
+    width: "100%",
+  },
+}));
+
+function PrivateRoute({ Component }) {
+  const accessToken = localStorage.getItem("accessToken");
+  return accessToken != null && accessToken != undefined ? (
+    <Component />
+  ) : (
+    <Navigate to="/" />
+  );
+}
+function App(props) {
+  const dispatch = useDispatch();
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Routes>
+        <Route exact path="/" element={<LoginDemo />} />
+
+        <Route
+          path="/dashboard"
+          element={<PrivateRoute Component={DashBoard} />}
+        />
+      </Routes>
+      {/* <CssBaseline /> */}
+    </>
+    // <div style={{ display: "flex", flexDirection: "row" }}>
+    //   <div style={{ flex: 1 }}>
+    //     <SideBarMenu />
+    //   </div>
+    //   <div style={{ flex: 4, background: "#E8EFF7" }}>
+    //     <DashBoard />
+    //   </div>
+    //   <CssBaseline />
+    // </div>
   );
 }
 
