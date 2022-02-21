@@ -35,3 +35,7 @@ export default function* rootSaga() {
 }
 // username: "karn.yong@mecallapi.com",
 // password: "mecallapi",
+
+// dev-r-zwu02g.us.auth0.com
+// UijIxNAY0HioVrV5knvcprnF8IQloxrh
+// naWhURivSEaIzpHPhGR4O3qlnEdsHUCWLwpB4xqHpXl3U6HmeUDJf0LuwDAtb7TW

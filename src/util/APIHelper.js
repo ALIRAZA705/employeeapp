@@ -1,6 +1,13 @@
+let token = "";
+export const getIdToken = async () => {
+  token = localStorage.getItem("accessToken");
+  return await token;
+};
+
 export const makeRequest = async (opts) => {
   // Get the current token
-  // token = await getIdToken();
+  token = await getIdToken();
+  console.log("here is the token :", token);
   // token = localStorage.getItem("jwtoken");
 
   const options = {
@@ -10,9 +17,9 @@ export const makeRequest = async (opts) => {
     },
   };
   console.log("hre is the request", options);
-  // if (opts.contentType) {
-  //   options.headers["Content-Type"] = opts.contentType;
-  // }
+  if (token != null) {
+    options.headers["Authorization"] = `Bearer ${token}`;
+  }
 
   // Return the fetch response or throw the error.
   return await fetch(options.path, options)

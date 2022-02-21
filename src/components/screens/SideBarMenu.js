@@ -1,13 +1,12 @@
-import { Grid, Paper, Typography } from "@mui/material";
 import React from "react";
+// material ui
+import { Grid, Paper, Typography } from "@mui/material";
 import { makeStyles } from "@material-ui/core/styles";
 
+//styles
 const useStyles = makeStyles({
   sideBarMenu: {
-    // background: "#253053",
-    // position: "absolute",
     color: "white",
-    // padding: "10px",
     height: "100%",
     width: "320px",
   },

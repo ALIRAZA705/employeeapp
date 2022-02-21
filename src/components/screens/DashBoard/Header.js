@@ -1,12 +1,14 @@
-import { AppBar, Badge, Grid, IconButton, InputBase } from "@mui/material";
 import React from "react";
+// material ui
+import { Badge, Grid, IconButton, InputBase } from "@mui/material";
 import { makeStyles } from "@material-ui/core/styles";
 import NotificationsNoneIcon from "@mui/icons-material/NotificationsNone";
-import MailIcon from "@mui/icons-material/Mail";
+//icons
 import SearchIcon from "@mui/icons-material/Search";
 import SettingsIcon from "@mui/icons-material/Settings";
 import PersonIcon from "@mui/icons-material/Person";
 
+//constants
 const useStyles = makeStyles((theme) => ({
   header: {
     backgroundColor: "white !important",

@@ -1,15 +1,16 @@
-import "./App.css";
 import React from "react";
-import SideBarMenu from "./components/screens/SideBarMenu";
+// material ui
 import { makeStyles } from "@material-ui/core/styles";
-import { CssBaseline, Grid } from "@mui/material";
+import { CssBaseline } from "@mui/material";
+// redux
 import { useDispatch } from "react-redux";
-import DashBoard from "./components/screens/DashBoard";
+// routes
 import { Routes, Route, Navigate, Link } from "react-router-dom";
+// files
+import DashBoard from "./components/screens/DashBoard";
 import Login from "./components/screens/Login";
-import GoogleAuth from "./components/screens/GoogleAuth";
-import LoginDemo from "./components/screens/LoginDemo";
 
+//styles
 const useStyles = makeStyles((theme) => ({
   appMain: {
     paddingLeft: "320px",
@@ -26,19 +27,17 @@ function PrivateRoute({ Component }) {
   );
 }
 function App(props) {
-  const dispatch = useDispatch();
-
   return (
     <>
       <Routes>
-        <Route exact path="/" element={<LoginDemo />} />
+        <Route exact path="/" element={<Login />} />
 
         <Route
           path="/dashboard"
           element={<PrivateRoute Component={DashBoard} />}
         />
       </Routes>
-      {/* <CssBaseline /> */}
+      <CssBaseline />
     </>
     // <div style={{ display: "flex", flexDirection: "row" }}>
     //   <div style={{ flex: 1 }}>

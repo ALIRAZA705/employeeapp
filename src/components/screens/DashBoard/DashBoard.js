@@ -1,3 +1,5 @@
+import React from "react";
+// material ui
 import {
   Badge,
   Button,
@@ -6,57 +8,21 @@ import {
   Paper,
   Typography,
 } from "@mui/material";
-import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import {
-  Bar,
-  BarChart,
-  CartesianGrid,
-  Legend,
-  ResponsiveContainer,
-  Tooltip,
-  XAxis,
-  YAxis,
-} from "recharts";
+import BarChart from "./Graphs/Barchart";
+// charts
+// import {
+//   Bar,
+//   BarChart,
+//   CartesianGrid,
+//   Legend,
+//   ResponsiveContainer,
+//   Tooltip,
+//   XAxis,
+//   YAxis,
+// } from "recharts";
 
-const data = [
-  {
-    name: "Page A",
-    uv: 4000,
-    pv: 2400,
-  },
-  {
-    name: "Page B",
-    uv: 3000,
-    pv: 1398,
-  },
-  {
-    name: "Page C",
-    uv: 2000,
-    pv: 9800,
-  },
-  {
-    name: "Page D",
-    uv: 2780,
-    pv: 3908,
-  },
-  {
-    name: "Page E",
-    uv: 1890,
-    pv: 4800,
-  },
-  {
-    name: "Page F",
-    uv: 2390,
-    pv: 3800,
-  },
-  {
-    name: "Page G",
-    uv: 3490,
-    pv: 4300,
-  },
-];
-
+// styles
 const useStyles = makeStyles((theme) => ({
   button: {
     "&.MuiButton-root": {
@@ -67,14 +33,8 @@ const useStyles = makeStyles((theme) => ({
     color: "#186AA5",
     textAlign: "center",
   },
-  dot: {
-    height: "25px",
-    width: "25px",
-    backgroundColor: "#bbb",
-    borderRadius: "50%",
-    display: "inline",
-  },
 }));
+
 function DashBoard(props) {
   const classes = useStyles();
   return (
@@ -90,6 +50,7 @@ function DashBoard(props) {
           WELCOME USER
         </Typography>
       </Grid>
+
       <Grid item>
         <Grid container direction="row" alignItems="baseline">
           <Grid item xs={10}>
@@ -97,6 +58,7 @@ function DashBoard(props) {
               Run Payroll 01-01-2022 to 01-01-2022
             </Typography>
           </Grid>
+
           <Grid item xs={2}>
             <Button
               variant="outlined"
@@ -135,13 +97,16 @@ function DashBoard(props) {
                 </Grid>
               </Paper>
             </Grid>
+
             <Grid item xs={1}></Grid>
+
             <Grid item xs={4}>
               <Paper style={{ height: "10vh" }}>
                 <Typography className={classes.text}>No of Employes</Typography>
               </Paper>
             </Grid>
           </Grid>
+
           <Grid item xs={11} sx={{ mt: 5 }}>
             {" "}
             <Paper>
@@ -152,22 +117,10 @@ function DashBoard(props) {
               >
                 Payroll Cost Summary
               </Typography>
-              <ResponsiveContainer width={"95%"} height={300}>
-                <BarChart
-                  data={data}
-                  margin={{ top: 15, right: 10, left: 10, bottom: 5 }}
-                >
-                  <CartesianGrid strokeDasharray="3 3" />
-                  <XAxis dataKey="name" />
-                  <YAxis />
-                  <Tooltip />
-                  <Legend />
-                  <Bar dataKey="pv" fill="#8884d8" />
-                  {/* <Bar dataKey="uv" fill="#82ca9d" /> */}
-                </BarChart>
-              </ResponsiveContainer>
+              <BarChart />
             </Paper>
           </Grid>
+
           <Grid item xs={11} sx={{ mt: 5 }}>
             {" "}
             <Paper>
@@ -188,12 +141,15 @@ function DashBoard(props) {
             </Paper>
           </Grid>
         </Grid>
+
         <Grid item xs={1}></Grid>
+
         <Grid item xs={3}>
           <Paper style={{ height: "10vh" }}>
             <Typography className={classes.text}>Recent Payment</Typography>
           </Paper>
         </Grid>
+
         <Grid item xs={1}></Grid>
       </Grid>
     </Grid>

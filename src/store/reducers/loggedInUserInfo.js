@@ -3,7 +3,7 @@ import {
   LOGGED_IN_USER_INFO_SUCCESS,
   LOGGED_IN_USER_INFO_FAILURE,
 } from "../constants/LoggedInUserInfo";
-import { useNavigate } from "react-router-dom";
+
 const INIT_STATE = {
   loggedInUserData: {},
   loadingLoggedInUserData: true,
@@ -11,7 +11,6 @@ const INIT_STATE = {
 
 export default (state = INIT_STATE, action) => {
   switch (action.type) {
-    // for add club venue  info
     case LOGGED_IN_USER_Info:
       return {
         ...state,
