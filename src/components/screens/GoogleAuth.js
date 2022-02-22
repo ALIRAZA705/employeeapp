@@ -56,10 +56,10 @@ function GoogleAuth() {
     <>
       <GoogleLogin
         clientId="953999418916-g6ht104mq1rdooi3iickb4olava8qj3k.apps.googleusercontent.com"
-        // accessType="offline"
-        // approvalPrompt="force"
-        // prompt="consent"
-        // responseType="code"
+        accessType="offline"
+        approvalPrompt="force"
+        prompt="consent"
+        responseType="code"
         render={(renderProps) => (
           <Box
             sx={{

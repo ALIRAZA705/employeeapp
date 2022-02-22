@@ -10,17 +10,6 @@ import {
 } from "@mui/material";
 import { makeStyles } from "@material-ui/core/styles";
 import BarChart from "./Graphs/Barchart";
-// charts
-// import {
-//   Bar,
-//   BarChart,
-//   CartesianGrid,
-//   Legend,
-//   ResponsiveContainer,
-//   Tooltip,
-//   XAxis,
-//   YAxis,
-// } from "recharts";
 
 // styles
 const useStyles = makeStyles((theme) => ({
