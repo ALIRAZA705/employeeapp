@@ -2,7 +2,7 @@ import { combineReducers } from "redux";
 import LoggedInUserInfo from "./loggedInUserInfo";
 
 const reducers = combineReducers({
-  LoggedInUserInfo,
+    LoggedInUserInfo,
 });
 
 export default reducers;

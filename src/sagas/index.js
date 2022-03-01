@@ -4,5 +4,5 @@ import addClubVenue from "./AddClubVenue";
 import WhiteLabelStyling from "./WhiteLabelStyling";
 
 export default function* rootSaga(getState) {
-  yield all([addClubVenue(), WhiteLabelStyling()]);
+    yield all([addClubVenue(), WhiteLabelStyling()]);
 }
