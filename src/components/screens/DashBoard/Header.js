@@ -23,8 +23,8 @@ function Header(props) {
     return (
         <div>
             <Grid container direction="row" style={{ marginTop: 25 }}>
-                <Grid item xs={6}></Grid>
-                <Grid item xs={4}>
+                <Grid item xs={7}></Grid>
+                <Grid item xs={3.5}>
                     <InputBase
                         fullWidth={true}
                         style={{
@@ -47,12 +47,12 @@ function Header(props) {
                     />
                 </Grid>
 
-                <Grid item xs={2}>
+                <Grid item xs={1}>
                     <IconButton>
                         <Badge
                             badgeContent={4}
                             color="secondary"
-                            style={{ marginRight: 15, marginLeft: 15 }}
+                            // style={{ marginRight: 15, marginLeft: 15 }}
                         >
                             <NotificationsNoneIcon
                                 className={classes.headerIcons}
@@ -69,6 +69,7 @@ function Header(props) {
                         <PersonIcon className={classes.headerIcons} />
                     </IconButton> */}
                 </Grid>
+                <Grid item xs={1 / 2}></Grid>
             </Grid>
         </div>
     );

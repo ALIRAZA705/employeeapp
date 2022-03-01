@@ -20,6 +20,11 @@ const useStyles = makeStyles((theme) => ({
         color: "#186AA5",
         textAlign: "center",
     },
+    paper_: {
+        height: "100%",
+        borderRadius: "15px",
+        padding: 5,
+    },
 }));
 // const recentPayments = [1, 2, 3, 4, 5, 6, 7];
 
@@ -32,7 +37,6 @@ function DashBoard(props) {
                 direction="row"
                 justifyContent="flex-start"
                 alignItems="flex-end"
-                sx={{ mx: 5 }}
             >
                 {/* <Grid item>
                 <Typography
@@ -74,13 +78,13 @@ function DashBoard(props) {
                         Outlined
                     </Button>
                 </Grid>
-                <Grid item xs={2}>
+                <Grid item xs={2.5}>
                     {" "}
                 </Grid>
                 <Grid item xs={3}>
                     <Paper
                         sx={{
-                            height: "8vh",
+                            height: "100%",
                             padding: 1,
                             borderRadius: "15px",
                         }}
@@ -98,11 +102,7 @@ function DashBoard(props) {
                                     style={{ color: "blue", marginTop: 0 }}
                                 />
                             </Grid>
-                            <Grid
-                                item
-                                style={{ marginTop: 0 }}
-                                alignItems="revert"
-                            >
+                            <Grid item>
                                 <Typography style={{ fontWeight: "bold" }}>
                                     Change Password
                                 </Typography>
@@ -289,7 +289,7 @@ function DashBoard(props) {
                 direction="colummn"
                 alignItems="flex-start"
                 justifyContent="flex-start"
-                sx={{ mx: 5, mt: 3 }}
+                sx={{ mt: 3 }}
             >
                 <Grid item container>
                     {/* <Grid item xs={1}></Grid> */}
@@ -301,7 +301,7 @@ function DashBoard(props) {
                                         <Paper
                                             style={{
                                                 height: "100%",
-                                                borderRadius: "10px",
+                                                borderRadius: "15px",
                                                 padding: 5,
                                             }}
                                         >
@@ -353,7 +353,7 @@ function DashBoard(props) {
                                             style={{
                                                 height: "100%",
                                                 padding: 5,
-                                                borderRadius: "10px",
+                                                borderRadius: "15px",
                                             }}
                                         >
                                             <Grid
@@ -425,7 +425,7 @@ function DashBoard(props) {
                                 <Paper
                                     style={{
                                         height: "100%",
-                                        borderRadius: "10px",
+                                        borderRadius: "15px",
                                         padding: 5,
                                     }}
                                 >

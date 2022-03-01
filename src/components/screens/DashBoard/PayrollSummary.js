@@ -17,7 +17,7 @@ const useStyles = makeStyles((theme) => ({
 function PayrollSummary(props) {
     const classes = useStyles();
     return (
-        <Paper>
+        <Paper style={{ height: "100%", borderRadius: "15px" }}>
             <Grid
                 item
                 container
