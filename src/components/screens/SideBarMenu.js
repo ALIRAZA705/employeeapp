@@ -12,6 +12,8 @@ import {
 } from "@material-ui/core";
 import InboxIcon from "@mui/icons-material/MoveToInbox";
 import MailIcon from "@mui/icons-material/Mail";
+//router
+import { useNavigate } from "react-router-dom";
 
 //styles
 const useStyles = makeStyles({
@@ -24,6 +26,7 @@ const useStyles = makeStyles({
 
 function SideBarMenu(props) {
     const classes = useStyles();
+    const navigate = useNavigate();
 
     return (
         <Grid
@@ -49,7 +52,14 @@ function SideBarMenu(props) {
                             "Payment Settings",
                             "Settings",
                         ].map((text, index) => (
-                            <ListItem button key={text} color="red">
+                            <ListItem
+                                button
+                                key={text}
+                                color="red"
+                                onClick={() =>
+                                    navigate(`${text.toLowerCase()}`)
+                                }
+                            >
                                 <ListItemIcon>
                                     <MailIcon />
                                 </ListItemIcon>

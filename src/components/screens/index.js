@@ -2,9 +2,11 @@ import React from "react";
 
 //files
 // import Settings from "./../Settings";
-import DashBoard from "./DashBoard";
-import SideBarMenu from "./../SideBarMenu";
-import Header from "./Header";
+// import DashBoard from "./DashBoard/DashBoard";
+// import Settings from "./Settings";
+import SideBarMenu from "./SideBarMenu";
+import Header from "./DashBoard/Header";
+import { Outlet } from "react-router-dom";
 // import { useLocation } from "react-router-dom";
 
 function index(props) {
@@ -28,13 +30,11 @@ function index(props) {
                         <Header />
                     </div>
                     <div style={{ flex: 4 }}>
-                        {/* {currentPath == "dashboard" ? (
-                            <DashBoard />
-                        ) : (
-                            <Settings />
-                        )} */}
-                        <DashBoard />
-                        {/* <Settings /> */}
+                        <Outlet />
+                        {/* <Routes>
+                            <Route path="dashboard" element={<DashBoard />} />
+                            <Route path="settings" element={<Settings />} />
+                        </Routes> */}
                     </div>
                 </div>
             </div>

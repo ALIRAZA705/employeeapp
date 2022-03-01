@@ -1,26 +1,15 @@
 import React from "react";
 // material ui
-// import { makeStyles } from "@material-ui/core/styles";
-import { CssBaseline } from "@mui/material";
-// redux
-// import { useDispatch } from "react-redux";
+// import { CssBaseline } from "@mui/material";
 // routes
-import { Routes, Route, Navigate } from "react-router-dom";
-// files
-import DashBoard from "./components/screens/DashBoard";
-// import SideBarMenu from "./components/screens/SideBarMenu";
-// import Login from "./components/screens/Login";
+import { useRoutes, Navigate } from "react-router-dom";
+// components
+import DashBoard from "./components/screens/DashBoard/DashBoard";
 import Settings from "../src/components/screens/Settings";
+import Login from "./components/screens/Login";
+import AppScafolding from "../src/components/screens";
 
-//styles
-// const useStyles = makeStyles((theme) => ({
-//     appMain: {
-//         paddingLeft: "320px",
-//         width: "100%",
-//     },
-// }));
-// console.log("here is styles:", useStyles);
-
+//functions
 function PrivateRoute({ Component }) {
     const accessToken = localStorage.getItem("accessToken");
     return accessToken != null && accessToken != undefined ? (
@@ -29,21 +18,41 @@ function PrivateRoute({ Component }) {
         <Navigate to="/" />
     );
 }
-function App(props) {
-    return (
-        <>
-            <Routes>
-                <Route exact path="/" element={<DashBoard />} />
-                <Route exact path="/settings" element={<Settings />} />
-                <Route
-                    path="/dashboard"
-                    element={<PrivateRoute Component={DashBoard} />}
-                />
-            </Routes>
 
-            <CssBaseline />
-        </>
-    );
+function App(props) {
+    // return (
+    //     <>
+
+    //         <Routes>
+    //             <Route exact path="/" element={<Login />} />
+    //             <Route exact path="/main/*" element={<AppScafolding />}>
+    //                 <Route path="dashboard" element={<DashBoard />} />
+    //                 <Route
+    //                     path="settings"
+    //                     element={<PrivateRoute Component={Settings} />}
+    //                 />
+    //             </Route>
+    //         </Routes>
+
+    //         <CssBaseline />
+    //     </>
+    // );
+    let element = useRoutes([
+        { path: "/", element: <Login /> },
+        {
+            path: "main",
+            element: <AppScafolding />,
+            children: [
+                { path: "dashboard", element: <DashBoard /> },
+                {
+                    path: "settings",
+                    element: <PrivateRoute Component={Settings} />,
+                },
+            ],
+        },
+    ]);
+
+    return element;
 }
 
 export default App;
