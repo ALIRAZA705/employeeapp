@@ -1,6 +1,6 @@
 import React from "react";
 // material ui
-import { Button, Grid, Paper, Typography } from "@mui/material";
+import { Button, Grid, IconButton, Paper, Typography } from "@mui/material";
 import { makeStyles } from "@material-ui/core/styles";
 import DateRangeIcon from "@mui/icons-material/DateRange";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
@@ -118,171 +118,6 @@ function DashBoard(props) {
                         </Grid>
                     </Paper>
                 </Grid>
-
-                {/* second row */}
-
-                {/* <Grid item container sx={{ mt: 5 }}>
-                    <Grid item xs={6} container>
-                        <Grid item xs={8}>
-                            <Paper
-                                style={{
-                                    height: "100%",
-                                    borderRadius: "10px",
-                                    padding: 5,
-                                }}
-                            >
-                                <Grid
-                                    container
-                                    direction="row"
-                                    justifyContent="space-around"
-                                    alignItems="center"
-                                    height="100%"
-                                >
-                                    <Grid item>
-                                        <Typography
-                                            className={classes.text}
-                                            fontWeight="bold"
-                                            variant="h6"
-                                            // fontFamily="Chilanka"
-                                        >
-                                            Total Payroll
-                                        </Typography>
-                                        <Typography
-                                            className={classes.text}
-                                            fontSize="25px"
-                                            fontWeight="bold"
-                                        >
-                                            $ 21,5567
-                                        </Typography>
-                                    </Grid>
-                                    <Grid item>
-                                        <Typography
-                                            className={classes.text}
-                                            fontSize="12px"
-                                        >
-                                            Payment Date
-                                        </Typography>
-                                        <Typography
-                                            className={classes.text}
-                                            fontSize="14px"
-                                            fontWeight="bold"
-                                        >
-                                            31/06/2020
-                                        </Typography>
-                                    </Grid>
-                                </Grid>
-                            </Paper>
-                        </Grid>
-
-                        <Grid item xs={1}></Grid>
-
-                        <Grid item xs={3}>
-                            <Paper
-                                style={{
-                                    height: "100%",
-                                    padding: 5,
-                                    borderRadius: "10px",
-                                }}
-                            >
-                                <Grid
-                                    item
-                                    container
-                                    justifyContent="space-around"
-                                    alignItems="center"
-                                    height="100%"
-                                >
-                                    <Grid item>
-                                        <div
-                                            style={{
-                                                height: "35px",
-                                                width: "35px",
-                                                borderRadius: "50px",
-                                                backgroundColor: "#C8EFF7",
-                                                padding: 5,
-                                            }}
-                                        >
-                                            <PeopleOutlineIcon />
-                                        </div>
-                                    </Grid>
-                                    <Grid item>
-                                        <Typography
-                                            className={classes.text}
-                                            fontWeight="bold"
-                                            fontSize="15px"
-                                            fontFamily="Chilanka"
-                                        >
-                                            Total Employes
-                                        </Typography>
-                                        <Typography
-                                            className={classes.text}
-                                            fontWeight="bold"
-                                            textAlign="start"
-                                        >
-                                            72
-                                        </Typography>
-                                    </Grid>
-                                </Grid>
-                            </Paper>
-                        </Grid>
-                    </Grid>
-
-                    <Grid item xs={1}></Grid>
-
-                    <Grid item xs={4}>
-                        <Paper style={{ height: "100%" }}>
-                            <Grid
-                                item
-                                container
-                                direction="row"
-                                xs={12}
-                                height="100%"
-                            >
-                                <Grid item xs={3}>
-                                    <Typography className={classes.text}>
-                                        To do Task
-                                    </Typography>
-                                </Grid>
-                                <Grid item xs></Grid>
-                                <Grid item xs={2}>
-                                    <Typography
-                                        className={classes.text}
-                                        fontSize="12px"
-                                        color="grey"
-                                    >
-                                        See All
-                                    </Typography>
-                                </Grid>
-                            </Grid>
-                        </Paper>
-                    </Grid>
-
-                    <Grid item xs={1}></Grid>
-                </Grid> */}
-                {/* /////////////////////////////////////////////////////////////// */}
-                {/* {//next row} */}
-                {/* <Grid item container>
-                <Grid item xs={6} container direction="column">
-                    <Grid item xs={12} sx={{ mt: 3 }}>
-                        {" "}
-                        <PayrollSummary />
-                    </Grid>
-                </Grid>
-                <Grid item xs={1}></Grid>
-                <Grid item xs={4} container>
-                    <Grid item xs={12} sx={{ mt: 3 }}>
-                        {" "}
-                        <RecentPayments />
-                    </Grid>
-                </Grid>
-            </Grid>
-            <Grid item container>
-                <Grid item xs={6} container>
-                    <Grid item xs={12} sx={{ mt: 3 }}>
-                        {" "}
-                        <EmployeeSummary />
-                    </Grid>
-                </Grid>
-            </Grid> */}
             </Grid>
             <Grid
                 conatiner
@@ -293,7 +128,7 @@ function DashBoard(props) {
             >
                 <Grid item container>
                     {/* <Grid item xs={1}></Grid> */}
-                    <Grid item xs={6.5} container>
+                    <Grid item xs={7} container>
                         <Grid item xs={12} container direction="row">
                             <Grid item xs={12}>
                                 <Grid item container>
@@ -364,7 +199,7 @@ function DashBoard(props) {
                                                 height="100%"
                                             >
                                                 <Grid item>
-                                                    <div
+                                                    {/* <div
                                                         style={{
                                                             height: "35px",
                                                             width: "35px",
@@ -376,7 +211,21 @@ function DashBoard(props) {
                                                         }}
                                                     >
                                                         <PeopleOutlineIcon />
-                                                    </div>
+                                                    </div> */}
+                                                    <IconButton
+                                                        size="medium"
+                                                        style={{
+                                                            backgroundColor:
+                                                                "#CCDDF6",
+                                                        }}
+                                                    >
+                                                        <PeopleOutlineIcon
+                                                            style={{
+                                                                color: "#568FE1",
+                                                            }}
+                                                            size="medium"
+                                                        />
+                                                    </IconButton>
                                                 </Grid>
                                                 <Grid item>
                                                     <Typography
@@ -410,7 +259,7 @@ function DashBoard(props) {
                             <EmployeeSummary />
                         </Grid>
                     </Grid>
-                    <Grid item xs={1}></Grid>
+                    <Grid item xs={1 / 2}></Grid>
 
                     <Grid item xs={4} conatiner>
                         {/* <Grid item container direction="row">

@@ -3,7 +3,6 @@ import React from "react";
 import {
     Bar,
     BarChart,
-    CartesianGrid,
     Legend,
     ResponsiveContainer,
     Tooltip,
@@ -56,12 +55,12 @@ function Barchart(props) {
                 data={data}
                 margin={{ top: 15, right: 10, left: 10, bottom: 5 }}
             >
-                <CartesianGrid strokeDasharray="3 3" />
+                {/* <CartesianGrid strokeDasharray="3 3" /> */}
                 <XAxis dataKey="name" />
                 <YAxis />
                 <Tooltip />
                 <Legend />
-                <Bar dataKey="pv" fill="#8884d8" />
+                <Bar dataKey="pv" fill="#73A2E6" />
             </BarChart>
         </ResponsiveContainer>
     );

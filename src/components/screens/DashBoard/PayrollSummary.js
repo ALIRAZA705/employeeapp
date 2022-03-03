@@ -1,7 +1,7 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { Grid, Paper, Typography } from "@mui/material";
-import Areachart from "./Graphs/Areachart";
+import Barchart from "./Graphs/Barchart";
 // styles
 const useStyles = makeStyles((theme) => ({
     button: {
@@ -38,7 +38,7 @@ function PayrollSummary(props) {
             </Grid>
 
             <Grid item>
-                <Areachart />
+                <Barchart />
             </Grid>
         </Paper>
     );
