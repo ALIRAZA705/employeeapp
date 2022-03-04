@@ -4,7 +4,7 @@ import React from "react";
 import { Grid, IconButton, Typography } from "@mui/material";
 import { makeStyles } from "@material-ui/core/styles";
 //icons
-import EmailIcon from "@mui/icons-material/Email";
+// import EmailIcon from "@mui/icons-material/Email";
 
 // styles
 const useStyles = makeStyles((theme) => ({
@@ -28,38 +28,51 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-function gridFunction(data, index) {
+// function CheckIcon(icon) {
+//     return icon;
+// }
+
+function gridFunction(data, iconButton, icon, fontsize) {
     const classes = useStyles();
     console.log(classes);
+    const CheckIcon = (icon) => {
+        if (icon) {
+            return icon;
+        } else return null;
+    };
 
     return (
         <Grid item container direction="row" alignItems="center">
-            <IconButton
-                size="small"
-                style={{
-                    backgroundColor: "#CCDDF6",
-                }}
-            >
-                <EmailIcon style={{ color: "#568FE1" }} size="small" />
-            </IconButton>
+            {iconButton == true ? (
+                <IconButton
+                    size="small"
+                    style={{
+                        backgroundColor: "#CCDDF6",
+                    }}
+                >
+                    {CheckIcon(icon)}
+                </IconButton>
+            ) : (
+                CheckIcon(icon)
+            )}
             <Typography
                 variant="v6"
                 style={{
                     color: "black",
-                    fontSize: "10px",
+                    fontSize: fontsize,
                     marginLeft: "10px",
                 }}
             >
-                ali.raza@servicesymphony.con
+                {data}
             </Typography>
         </Grid>
     );
 }
 
 function EmailWithIcon(props) {
-    const { data } = props;
+    const { data, iconButton, icon, fontsize } = props;
 
-    return <>{data ? gridFunction(data) : null}</>;
+    return <>{data ? gridFunction(data, iconButton, icon, fontsize) : null}</>;
 }
 
 export default EmailWithIcon;

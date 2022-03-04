@@ -1,8 +1,24 @@
 import React from "react";
 // material ui
 import { Avatar, Grid, Paper, Typography } from "@mui/material";
+import { makeStyles } from "@material-ui/core/styles";
+//widgets
+import EmailWithIcon from "../../widgets/EmailWithIcon";
+//icons
+import EmailIcon from "@mui/icons-material/Email";
+import { Box } from "@mui/system";
 
+// styles
+const useStyles = makeStyles((theme) => ({
+    icon: {
+        color: "#568FE1",
+        size: "small",
+        marginTop: 2,
+    },
+}));
 function EmployeeProfile(props) {
+    const classes = useStyles();
+    console.log(classes);
     return (
         <Grid container direction="row">
             <Grid item>
@@ -43,6 +59,7 @@ function EmployeeProfile(props) {
                         </Grid>
                     </Paper>
                 </Grid>
+
                 <Grid item xs={11}>
                     <Grid
                         item
@@ -52,9 +69,11 @@ function EmployeeProfile(props) {
                         alignItems="flex-start"
                         sx={{ mt: 3 }}
                         xs={12}
+                        style={{ height: "100%" }}
                     >
-                        <Grid item xs={5}>
-                            <Paper>
+                        {/*  perosnal information */}
+                        <Grid item xs={5} style={{ height: "100%" }}>
+                            <Paper style={{ height: "100%" }}>
                                 <Typography
                                     sx={{ pt: 2, pl: 3, color: "gray" }}
                                 >
@@ -219,26 +238,116 @@ function EmployeeProfile(props) {
                                 </Grid>
                             </Paper>
                         </Grid>
-                        <Grid item xs={5}>
-                            <Paper>
-                                <Typography variant="v5" fontWeight="bold">
-                                    Overview
+                        {/* employment information */}
+                        <Grid item xs={5} style={{ height: "100%" }}>
+                            <Paper style={{ height: "100%" }}>
+                                <Typography
+                                    sx={{ pt: 2, pl: 3, color: "gray" }}
+                                >
+                                    Employment Information
                                 </Typography>
+                                <Grid
+                                    item
+                                    container
+                                    direction="column"
+                                    justifyContent="center"
+                                    alignItems="center"
+                                    style={{ marginTop: "80px" }}
+                                >
+                                    <Box>
+                                        <Grid
+                                            item
+                                            container
+                                            direction="column"
+                                            alignItems="flex-start"
+                                            justifyContent="flex-start"
+                                            sx={{ mt: 5, pb: 5 }}
+                                        >
+                                            <Grid item>
+                                                <EmailWithIcon
+                                                    data={
+                                                        "ali.raza@servicesymphony.com"
+                                                    }
+                                                    iconButton={false}
+                                                    icon={
+                                                        <EmailIcon
+                                                            className={
+                                                                classes.icon
+                                                            }
+                                                        />
+                                                    }
+                                                    fontsize={15}
+                                                />
+                                            </Grid>
+                                            <Grid item sx={{ mt: 1 }}>
+                                                <EmailWithIcon
+                                                    data={
+                                                        "10/03/2022 (Date of Joining)"
+                                                    }
+                                                    iconButton={false}
+                                                    icon={
+                                                        <EmailIcon
+                                                            className={
+                                                                classes.icon
+                                                            }
+                                                        />
+                                                    }
+                                                    fontsize={15}
+                                                />
+                                            </Grid>
+                                            <Grid item sx={{ mt: 1 }}>
+                                                <EmailWithIcon
+                                                    data={"H&r Department"}
+                                                    iconButton={false}
+                                                    icon={
+                                                        <EmailIcon
+                                                            className={
+                                                                classes.icon
+                                                            }
+                                                        />
+                                                    }
+                                                    fontsize={15}
+                                                />
+                                            </Grid>
+                                            <Grid item sx={{ mt: 1 }}>
+                                                <EmailWithIcon
+                                                    data={
+                                                        "Full Time (42 hours weekly)"
+                                                    }
+                                                    iconButton={false}
+                                                    icon={
+                                                        <EmailIcon
+                                                            className={
+                                                                classes.icon
+                                                            }
+                                                        />
+                                                    }
+                                                    fontsize={15}
+                                                />
+                                            </Grid>
+                                            <Grid item sx={{ mt: 1 }}>
+                                                <EmailWithIcon
+                                                    data={
+                                                        " 213 Derrick Street Boston MA 02310 USA"
+                                                    }
+                                                    iconButton={false}
+                                                    icon={
+                                                        <EmailIcon
+                                                            className={
+                                                                classes.icon
+                                                            }
+                                                        />
+                                                    }
+                                                    fontsize={15}
+                                                />
+                                            </Grid>
+                                        </Grid>
+                                    </Box>
+                                </Grid>
                             </Paper>
                         </Grid>
                     </Grid>
                 </Grid>
-
-                {/* <Grid item>
-                    <Typography variant="h5" fontWeight="bold">
-                        Oscar Junior
-                    </Typography>
-                </Grid>
-                <Grid item>
-                    <Typography variant="h5" fontWeight="bold">
-                        Oscar Junior
-                    </Typography>
-                </Grid> */}
             </Grid>
         </Grid>
     );
