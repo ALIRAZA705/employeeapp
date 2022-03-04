@@ -150,6 +150,7 @@ const data = [
         menu: "icon",
     },
 ];
+
 // functions
 const handleRowClick = (rowData, rowMeta) => {
     console.log(
@@ -205,15 +206,17 @@ function Workforce(props) {
             >
                 <MUIDataTable
                     title={
-                        <Typography fontWeight="bold" fontSize="20px">
+                        <Typography
+                            fontWeight="bold"
+                            fontSize="20px"
+                            variant="h6"
+                        >
                             Employee List
                         </Typography>
                     }
                     data={data}
                     columns={columns}
                     options={options}
-                    // className={classes.table}
-                    // style={{ padding: 5 }}
                 />
             </Grid>
         </Grid>

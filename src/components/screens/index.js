@@ -8,6 +8,7 @@ import SideBarMenu from "./SideBarMenu";
 import Header from "./DashBoard/Header";
 import { Outlet } from "react-router-dom";
 // import { useLocation } from "react-router-dom";
+// import "./Scroll.css";
 
 function index(props) {
     // const location = useLocation();
@@ -15,6 +16,7 @@ function index(props) {
 
     return (
         <div
+            // className="scrollbar-hidden"
             style={{
                 display: "flex",
                 flexDirection: "row",
@@ -25,16 +27,25 @@ function index(props) {
                 <SideBarMenu />
             </div>
             <div style={{ flex: 4 }}>
-                <div style={{ display: "flex", flexDirection: "column" }}>
+                <div
+                    style={{
+                        display: "flex",
+                        flexDirection: "column",
+                    }}
+                >
                     <div style={{ flex: 1 }}>
                         <Header />
                     </div>
-                    <div style={{ flex: 4 }}>
+                    <div
+                        style={{
+                            flex: 4,
+                            overflow: "auto",
+                            position: "relative",
+                            // height: "100%",
+                            maxHeight: "600px",
+                        }}
+                    >
                         <Outlet />
-                        {/* <Routes>
-                            <Route path="dashboard" element={<DashBoard />} />
-                            <Route path="settings" element={<Settings />} />
-                        </Routes> */}
                     </div>
                 </div>
             </div>

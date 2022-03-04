@@ -26,13 +26,15 @@ const Theme = createTheme({
         fontFamily: ["Chilanka", "Roboto"].join(","),
         h6: {
             fontSize: 33,
-            // fontFamily: "Chilanka !important",
+
             fontWeight: 300,
             color: "#3A80B2",
             letterSpacing: "0.0075em",
-            // verticalAlign: "middle",
-            // alignItems: "center",
-            // textAlign: "center",
+        },
+    },
+    MUIDataTable: {
+        responsiveBase: {
+            padding: "10px",
         },
     },
 });

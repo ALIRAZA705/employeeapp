@@ -9,7 +9,9 @@ import Settings from "../src/components/screens/Settings";
 import Login from "./components/screens/Login";
 import AppScafolding from "../src/components/screens";
 import Workforce from "./components/screens/Workforce";
-import EmployeeProfile from "./components/screens/Workforce/EmployeeProfile";
+import EmployeeProfile from "./components/screens/Workforce/EmployDetails/EmployeeProfile";
+import SalaryDetails from "./components/screens/Workforce/EmployDetails/SalaryDetails";
+import Overview from "./components/screens/Workforce/EmployDetails/Overview";
 
 //functions
 function PrivateRoute({ Component }) {
@@ -30,7 +32,15 @@ function App(props) {
             children: [
                 { path: "dashboard", element: <DashBoard /> },
                 { path: "workforce", element: <Workforce /> },
-                { path: "overview", element: <EmployeeProfile /> },
+                {
+                    path: "employeeProfile",
+                    element: <EmployeeProfile />,
+                    children: [
+                        { path: "salaryDetails", element: <SalaryDetails /> },
+                        { path: "overview", element: <Overview /> },
+                    ],
+                },
+
                 {
                     path: "settings",
                     element: <PrivateRoute Component={Settings} />,

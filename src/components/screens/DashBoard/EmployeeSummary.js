@@ -64,7 +64,7 @@ function EmployeeSummary(props) {
                         container
                         direction="row"
                         justifyContent="space-between"
-                        sx={{ pt: 2, px: 2 }}
+                        sx={{ py: 2, px: 2 }}
                         xs={12}
                     >
                         {/* avatar */}

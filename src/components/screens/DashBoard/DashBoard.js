@@ -5,7 +5,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import DateRangeIcon from "@mui/icons-material/DateRange";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import PeopleOutlineIcon from "@mui/icons-material/PeopleOutline";
-
+//files
 import RecentPayments from "./RecentPayments";
 import PayrollSummary from "./PayrollSummary";
 import EmployeeSummary from "./EmployeeSummary";
@@ -37,18 +37,8 @@ function DashBoard(props) {
                 direction="row"
                 justifyContent="flex-start"
                 alignItems="flex-end"
+                sx={{ mt: 3 }}
             >
-                {/* <Grid item>
-                <Typography
-                    variant="v6"
-                    fontWeight="bold"
-                    color="#3A80B2"
-                    fontSize="32px"
-                >
-                    WELCOME back, Oscar jr
-                </Typography>
-            </Grid> */}
-
                 <Grid item xs={4.5} container direction="column">
                     <Typography
                         variant="v6"
@@ -127,7 +117,6 @@ function DashBoard(props) {
                 sx={{ mt: 3 }}
             >
                 <Grid item container>
-                    {/* <Grid item xs={1}></Grid> */}
                     <Grid item xs={7} container>
                         <Grid item xs={12} container direction="row">
                             <Grid item xs={12}>
@@ -152,7 +141,6 @@ function DashBoard(props) {
                                                         className={classes.text}
                                                         fontWeight="bold"
                                                         variant="h6"
-                                                        // fontFamily="Chilanka"
                                                     >
                                                         Total Payroll
                                                     </Typography>
@@ -254,7 +242,7 @@ function DashBoard(props) {
                             {" "}
                             <PayrollSummary />
                         </Grid>
-                        <Grid item xs={12} sx={{ mt: 3 }}>
+                        <Grid item xs={12} sx={{ mt: 3, mb: 3 }}>
                             {" "}
                             <EmployeeSummary />
                         </Grid>
@@ -262,13 +250,6 @@ function DashBoard(props) {
                     <Grid item xs={1 / 2}></Grid>
 
                     <Grid item xs={4} conatiner>
-                        {/* <Grid item container direction="row">
-                            <Grid item height="100%">
-                                aa
-                            </Grid>
-                            <Grid item>aa</Grid>
-                        </Grid> */}
-                        {/* <Grid item xs={12} container direction="column"> */}
                         <Grid item container direction="column">
                             <Grid item style={{ height: "100%" }}>
                                 <Paper
@@ -330,7 +311,7 @@ function DashBoard(props) {
                             direction="column"
                         >
                             {" "}
-                            <Grid item>
+                            <Grid item sx={{ pb: 3, mb: 3 }}>
                                 <RecentPayments />
                             </Grid>
                         </Grid>
