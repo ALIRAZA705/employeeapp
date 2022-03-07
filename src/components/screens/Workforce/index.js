@@ -8,6 +8,8 @@ import MoreVertIcon from "@mui/icons-material/MoreVert";
 //widget
 import ProfileWithIcon from "../../widgets/ProfileWithIcon";
 import EmailWithIcon from "../../widgets/EmailWithIcon";
+//router
+import { useNavigate } from "react-router-dom";
 
 // styles
 const useStyles = makeStyles((theme) => ({
@@ -151,22 +153,24 @@ const data = [
     },
 ];
 
-// functions
-const handleRowClick = (rowData, rowMeta) => {
-    console.log(
-        "here is row clicked :",
-        data[rowMeta.dataIndex].employeeName,
-        rowMeta
-    );
-};
-const options = {
-    filterType: "checkbox",
-    selectableRows: false,
-    onRowClick: handleRowClick,
-};
-
 function Workforce(props) {
     const classes = useStyles();
+    const navigate = useNavigate();
+    console.log("here is navigate", navigate);
+    // functions
+    const handleRowClick = (rowData, rowMeta) => {
+        console.log(
+            "here is row clicked :",
+            data[rowMeta.dataIndex].employeeName,
+            rowMeta
+        );
+        navigate("/main/employeeProfile/overview");
+    };
+    const options = {
+        filterType: "checkbox",
+        selectableRows: false,
+        onRowClick: handleRowClick,
+    };
     return (
         <Grid container direction="row" sx={{ mt: 3 }}>
             <Grid item container direction="row">

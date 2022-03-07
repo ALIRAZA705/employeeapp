@@ -12,6 +12,7 @@ import Workforce from "./components/screens/Workforce";
 import EmployeeProfile from "./components/screens/Workforce/EmployDetails/EmployeeProfile";
 import SalaryDetails from "./components/screens/Workforce/EmployDetails/SalaryDetails";
 import Overview from "./components/screens/Workforce/EmployDetails/Overview";
+import EmployeeExperience from "./components/screens/Workforce/EmployDetails/EmployeeExperience";
 
 //functions
 function PrivateRoute({ Component }) {
@@ -38,6 +39,7 @@ function App(props) {
                     children: [
                         { path: "salaryDetails", element: <SalaryDetails /> },
                         { path: "overview", element: <Overview /> },
+                        { path: "experience", element: <EmployeeExperience /> },
                     ],
                 },
 

@@ -115,6 +115,38 @@ const options = {
     onRowClick: handleRowClick,
 };
 
+// employee salary grid function
+function EmployeeSalaryGrid() {
+    return (
+        <Grid
+            container
+            direction="row"
+            justifyContent="space-around"
+            alignItems="flex-start"
+            sx={{ pt: 1, pb: 2 }}
+        >
+            <Grid item>
+                <Typography variant="h6">Salary Amount</Typography>
+                <Typography variant="h5" fontWeight="bold" textAlign="center">
+                    $ 1,560
+                </Typography>
+            </Grid>
+            <Grid item>
+                <Typography variant="h6">Annual salary</Typography>
+                <Typography variant="h5" fontWeight="bold" textAlign="center">
+                    $ 21,560
+                </Typography>
+            </Grid>
+            <Grid item>
+                <Typography variant="h6">Bonus</Typography>
+                <Typography variant="h5" fontWeight="bold" textAlign="center">
+                    $ 1,560
+                </Typography>
+            </Grid>
+        </Grid>
+    );
+}
+// main function
 function SalaryDetails(props) {
     const classes = useStyles();
     console.log(classes);
@@ -124,61 +156,11 @@ function SalaryDetails(props) {
             <Grid item contianer direction="row">
                 <Grid item>
                     <Paper>
-                        <Grid
-                            container
-                            direction="row"
-                            justifyContent="space-around"
-                            alignItems="flex-start"
-                            sx={{ mt: 3, pt: 1, pb: 2 }}
-                        >
-                            <Grid item>
-                                <Typography variant="h6">
-                                    Salary Amount
-                                </Typography>
-                                <Typography
-                                    variant="h5"
-                                    fontWeight="bold"
-                                    textAlign="center"
-                                >
-                                    $ 1,560
-                                </Typography>
-                            </Grid>
-                            <Grid item>
-                                <Typography variant="h6">
-                                    Annual salary
-                                </Typography>
-                                <Typography
-                                    variant="h5"
-                                    fontWeight="bold"
-                                    textAlign="center"
-                                >
-                                    $ 21,560
-                                </Typography>
-                            </Grid>
-                            <Grid item>
-                                <Typography variant="h6">Bonus</Typography>
-                                <Typography
-                                    variant="h5"
-                                    fontWeight="bold"
-                                    textAlign="center"
-                                >
-                                    $ 1,560
-                                </Typography>
-                            </Grid>
-                        </Grid>
+                        <EmployeeSalaryGrid />
                     </Paper>
                 </Grid>
-                {/* <Grid
-                item
-                container
-                direction="row"
-                justifyContent="space-around"
-                alignItems="flex-start"
-                sx={{ mt: 3, pt: 1, pb: 2 }}
-                xs={12}
-            >
-                <Grid item> */}
-                <Grid item sx={{ mt: 3, pt: 1, pb: 2 }}>
+
+                <Grid item sx={{ mt: 2, pt: 1, pb: 2 }}>
                     <MUIDataTable
                         title={
                             <Typography

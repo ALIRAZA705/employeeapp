@@ -10,22 +10,24 @@ const useStyles = makeStyles((theme) => ({
         },
     },
     text: {
-        color: "#186AA5",
+        // color: "#186AA5",
         textAlign: "center",
+        fontSize: "18px",
     },
 }));
 function PayrollSummary(props) {
     const classes = useStyles();
     return (
-        <Paper style={{ height: "100%", borderRadius: "15px" }}>
+        <Paper>
             <Grid
                 item
                 container
                 xs={11}
                 justifyContent="space-between"
-                sx={{ py: 2, my: 2, mx: 2 }}
+                alignItems="center"
+                sx={{ my: 2, mx: 2 }}
             >
-                <Typography variant="v6" className={classes.text}>
+                <Typography variant="h3" className={classes.text}>
                     Payroll Summary
                 </Typography>
 

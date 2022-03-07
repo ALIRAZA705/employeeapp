@@ -7,10 +7,7 @@ import { Provider } from "react-redux";
 import configureStore from "./store";
 import { BrowserRouter } from "react-router-dom";
 // material ui
-// import { ThemeProvider } from "@material-ui/styles";
-import { MuiThemeProvider } from "@material-ui/core/styles";
-
-import { createTheme } from "@material-ui/core/styles";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
 
 // if (process.env.REACT_APP_ENV != "development") console.log = () => {};
 
@@ -23,24 +20,40 @@ const Theme = createTheme({
 
     typography: {
         useNextVariants: true,
-        fontFamily: ["Chilanka", "Roboto"].join(","),
-        h6: {
-            fontSize: 33,
 
-            fontWeight: 300,
-            color: "#3A80B2",
+        h6: {
+            fontSize: 20,
+            fontWeight: "bold",
+
+            // color: "#3A80B2",
             letterSpacing: "0.0075em",
         },
+        h4: {
+            fontSize: "35px",
+            fontWeight: "bold",
+        },
+        //titles
+        h3: {
+            fontSize: "18px",
+            fontWeight: "bold",
+        },
     },
-    MUIDataTable: {
-        responsiveBase: {
-            padding: "10px",
+
+    components: {
+        MuiPaper: {
+            styleOverrides: {
+                root: {
+                    padding: 5,
+                    height: "100%",
+                    borderRadius: 15,
+                },
+            },
         },
     },
 });
 const store = configureStore();
 ReactDOM.render(
-    <MuiThemeProvider theme={Theme}>
+    <ThemeProvider theme={Theme}>
         <Provider store={store}>
             <BrowserRouter>
                 <React.StrictMode>
@@ -48,7 +61,7 @@ ReactDOM.render(
                 </React.StrictMode>
             </BrowserRouter>
         </Provider>
-    </MuiThemeProvider>,
+    </ThemeProvider>,
     document.getElementById("root")
 );
 

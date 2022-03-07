@@ -16,9 +16,197 @@ const useStyles = makeStyles((theme) => ({
         marginTop: 2,
     },
 }));
+// employee personal info grid function
+function EmployeePersonalInfoGrid() {
+    return (
+        <Grid
+            item
+            container
+            direction="row"
+            alignItems="flex-start"
+            justifyContent="space-around"
+        >
+            <Grid item xs={5}>
+                <Grid
+                    item
+                    container
+                    direction="column"
+                    justifyContent="flex-end"
+                    alignItems="flex-end"
+                >
+                    <Grid item>
+                        <Typography
+                            sx={{
+                                mt: 1,
+                                color: "gray",
+                            }}
+                        >
+                            Date of Birth
+                        </Typography>
+                    </Grid>
+                    <Grid item>
+                        <Typography
+                            sx={{
+                                mt: 1,
+                                color: "gray",
+                            }}
+                        >
+                            Gender
+                        </Typography>
+                    </Grid>
+                    <Grid item>
+                        <Typography
+                            sx={{
+                                mt: 1,
+                                color: "gray",
+                            }}
+                        >
+                            Personal Email
+                        </Typography>
+                    </Grid>
+                    <Grid item>
+                        <Typography
+                            sx={{
+                                mt: 1,
+                                color: "gray",
+                            }}
+                        >
+                            Mobile Number
+                        </Typography>
+                    </Grid>
+                    <Grid item>
+                        <Typography
+                            sx={{
+                                mt: 1,
+                                color: "gray",
+                            }}
+                        >
+                            Residential Address
+                        </Typography>
+                    </Grid>
+                </Grid>
+            </Grid>
+            <Grid item xs={5}>
+                <Grid
+                    item
+                    container
+                    direction="column"
+                    justifyContent="flex-start"
+                    alignItems="flex-start"
+                >
+                    <Grid item>
+                        <Typography
+                            sx={{
+                                mt: 1,
+                                color: "gray",
+                            }}
+                        >
+                            29/01/2020
+                        </Typography>
+                    </Grid>
+                    <Grid item>
+                        <Typography
+                            sx={{
+                                mt: 1,
+                                color: "gray",
+                            }}
+                        >
+                            Male
+                        </Typography>
+                    </Grid>
+                    <Grid item>
+                        <Typography
+                            sx={{
+                                mt: 1,
+                                color: "gray",
+                            }}
+                        >
+                            aliraza30028@gmail.com
+                        </Typography>
+                    </Grid>
+                    <Grid item>
+                        <Typography
+                            sx={{
+                                mt: 1,
+                                color: "gray",
+                            }}
+                        >
+                            +92-3320903739
+                        </Typography>
+                    </Grid>
+                    <Grid item>
+                        <Typography
+                            sx={{
+                                mt: 1,
+                                color: "gray",
+                            }}
+                        >
+                            213 Derrick Street Boston , MA 02310 USA
+                        </Typography>
+                    </Grid>
+                </Grid>
+            </Grid>
+        </Grid>
+    );
+}
 
-function Overview(props) {
+//employment infomation grid
+function EmploymentInformationGrid() {
     const classes = useStyles();
+    return (
+        <Grid
+            item
+            container
+            direction="column"
+            alignItems="flex-start"
+            justifyContent="flex-start"
+            sx={{ mt: 5, pb: 5 }}
+        >
+            <Grid item>
+                <EmailWithIcon
+                    data={"ali.raza@servicesymphony.com"}
+                    iconButton={false}
+                    icon={<EmailIcon className={classes.icon} />}
+                    fontsize={15}
+                />
+            </Grid>
+            <Grid item sx={{ mt: 1 }}>
+                <EmailWithIcon
+                    data={"10/03/2022 (Date of Joining)"}
+                    iconButton={false}
+                    icon={<EmailIcon className={classes.icon} />}
+                    fontsize={15}
+                />
+            </Grid>
+            <Grid item sx={{ mt: 1 }}>
+                <EmailWithIcon
+                    data={"H&r Department"}
+                    iconButton={false}
+                    icon={<EmailIcon className={classes.icon} />}
+                    fontsize={15}
+                />
+            </Grid>
+            <Grid item sx={{ mt: 1 }}>
+                <EmailWithIcon
+                    data={"Full Time (42 hours weekly)"}
+                    iconButton={false}
+                    icon={<EmailIcon className={classes.icon} />}
+                    fontsize={15}
+                />
+            </Grid>
+            <Grid item sx={{ mt: 1 }}>
+                <EmailWithIcon
+                    data={" 213 Derrick Street Boston MA 02310 USA"}
+                    iconButton={false}
+                    icon={<EmailIcon className={classes.icon} />}
+                    fontsize={15}
+                />
+            </Grid>
+        </Grid>
+    );
+}
+//main function
+function Overview(props) {
     return (
         <Grid
             item
@@ -26,7 +214,7 @@ function Overview(props) {
             direction="row"
             justifyContent="space-between"
             alignItems="flex-start"
-            sx={{ mt: 3 }}
+            // sx={{ mt: 3 }}
             xs={12}
             style={{ height: "100%" }}
         >
@@ -61,138 +249,11 @@ function Overview(props) {
                                 Software Engineer
                             </Typography>
                         </Grid>
-                        <Grid
-                            item
-                            container
-                            direction="row"
-                            alignItems="flex-start"
-                            justifyContent="space-around"
-                        >
-                            <Grid item xs={5}>
-                                <Grid
-                                    item
-                                    container
-                                    direction="column"
-                                    justifyContent="flex-end"
-                                    alignItems="flex-end"
-                                >
-                                    <Grid item>
-                                        <Typography
-                                            sx={{
-                                                mt: 1,
-                                                color: "gray",
-                                            }}
-                                        >
-                                            Date of Birth
-                                        </Typography>
-                                    </Grid>
-                                    <Grid item>
-                                        <Typography
-                                            sx={{
-                                                mt: 1,
-                                                color: "gray",
-                                            }}
-                                        >
-                                            Gender
-                                        </Typography>
-                                    </Grid>
-                                    <Grid item>
-                                        <Typography
-                                            sx={{
-                                                mt: 1,
-                                                color: "gray",
-                                            }}
-                                        >
-                                            Personal Email
-                                        </Typography>
-                                    </Grid>
-                                    <Grid item>
-                                        <Typography
-                                            sx={{
-                                                mt: 1,
-                                                color: "gray",
-                                            }}
-                                        >
-                                            Mobile Number
-                                        </Typography>
-                                    </Grid>
-                                    <Grid item>
-                                        <Typography
-                                            sx={{
-                                                mt: 1,
-                                                color: "gray",
-                                            }}
-                                        >
-                                            Residential Address
-                                        </Typography>
-                                    </Grid>
-                                </Grid>
-                            </Grid>
-                            <Grid item xs={5}>
-                                <Grid
-                                    item
-                                    container
-                                    direction="column"
-                                    justifyContent="flex-start"
-                                    alignItems="flex-start"
-                                >
-                                    <Grid item>
-                                        <Typography
-                                            sx={{
-                                                mt: 1,
-                                                color: "gray",
-                                            }}
-                                        >
-                                            29/01/2020
-                                        </Typography>
-                                    </Grid>
-                                    <Grid item>
-                                        <Typography
-                                            sx={{
-                                                mt: 1,
-                                                color: "gray",
-                                            }}
-                                        >
-                                            Male
-                                        </Typography>
-                                    </Grid>
-                                    <Grid item>
-                                        <Typography
-                                            sx={{
-                                                mt: 1,
-                                                color: "gray",
-                                            }}
-                                        >
-                                            aliraza30028@gmail.com
-                                        </Typography>
-                                    </Grid>
-                                    <Grid item>
-                                        <Typography
-                                            sx={{
-                                                mt: 1,
-                                                color: "gray",
-                                            }}
-                                        >
-                                            +92-3320903739
-                                        </Typography>
-                                    </Grid>
-                                    <Grid item>
-                                        <Typography
-                                            sx={{
-                                                mt: 1,
-                                                color: "gray",
-                                            }}
-                                        >
-                                            213 Derrick Street Boston , MA 02310
-                                            USA
-                                        </Typography>
-                                    </Grid>
-                                </Grid>
-                            </Grid>
-                        </Grid>
+                        <EmployeePersonalInfoGrid />
                     </Grid>
                 </Paper>
             </Grid>
+
             {/* employment information */}
             <Grid item xs={5} style={{ height: "100%" }}>
                 <Paper style={{ height: "100%" }}>
@@ -208,77 +269,7 @@ function Overview(props) {
                         style={{ marginTop: "80px" }}
                     >
                         <Box>
-                            <Grid
-                                item
-                                container
-                                direction="column"
-                                alignItems="flex-start"
-                                justifyContent="flex-start"
-                                sx={{ mt: 5, pb: 5 }}
-                            >
-                                <Grid item>
-                                    <EmailWithIcon
-                                        data={"ali.raza@servicesymphony.com"}
-                                        iconButton={false}
-                                        icon={
-                                            <EmailIcon
-                                                className={classes.icon}
-                                            />
-                                        }
-                                        fontsize={15}
-                                    />
-                                </Grid>
-                                <Grid item sx={{ mt: 1 }}>
-                                    <EmailWithIcon
-                                        data={"10/03/2022 (Date of Joining)"}
-                                        iconButton={false}
-                                        icon={
-                                            <EmailIcon
-                                                className={classes.icon}
-                                            />
-                                        }
-                                        fontsize={15}
-                                    />
-                                </Grid>
-                                <Grid item sx={{ mt: 1 }}>
-                                    <EmailWithIcon
-                                        data={"H&r Department"}
-                                        iconButton={false}
-                                        icon={
-                                            <EmailIcon
-                                                className={classes.icon}
-                                            />
-                                        }
-                                        fontsize={15}
-                                    />
-                                </Grid>
-                                <Grid item sx={{ mt: 1 }}>
-                                    <EmailWithIcon
-                                        data={"Full Time (42 hours weekly)"}
-                                        iconButton={false}
-                                        icon={
-                                            <EmailIcon
-                                                className={classes.icon}
-                                            />
-                                        }
-                                        fontsize={15}
-                                    />
-                                </Grid>
-                                <Grid item sx={{ mt: 1 }}>
-                                    <EmailWithIcon
-                                        data={
-                                            " 213 Derrick Street Boston MA 02310 USA"
-                                        }
-                                        iconButton={false}
-                                        icon={
-                                            <EmailIcon
-                                                className={classes.icon}
-                                            />
-                                        }
-                                        fontsize={15}
-                                    />
-                                </Grid>
-                            </Grid>
+                            <EmploymentInformationGrid />
                         </Box>
                     </Grid>
                 </Paper>

@@ -5,7 +5,8 @@ import { makeStyles } from "@material-ui/core/styles";
 import NotificationsNoneIcon from "@mui/icons-material/NotificationsNone";
 //icons
 import SearchIcon from "@mui/icons-material/Search";
-// import PersonIcon from "@mui/icons-material/Person";
+// files
+import ProfleWithIcon from "../../widgets/ProfileWithIcon";
 
 //constants
 const useStyles = makeStyles((theme) => ({
@@ -23,7 +24,9 @@ function Header(props) {
     return (
         <div>
             <Grid container direction="row" style={{ marginTop: 25 }}>
-                <Grid item xs={7}></Grid>
+                <Grid item xs={7} sx={{ pl: 0 }}>
+                    <ProfleWithIcon data={"aliraza"} shape="rounded" />
+                </Grid>
                 <Grid item xs={3.5}>
                     <InputBase
                         fullWidth={true}

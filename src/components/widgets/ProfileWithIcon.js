@@ -26,7 +26,7 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-function gridFunction(data, index) {
+function gridFunction(data, shape, index) {
     const classes = useStyles();
     console.log(classes);
 
@@ -40,12 +40,12 @@ function gridFunction(data, index) {
         >
             <Grid item>
                 <Avatar
-                    variant="circle"
+                    variant={shape == "rounded" ? "rounded" : "circle"}
                     src="https://images.pexels.com/photos/4016173/pexels-photo-4016173.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
                 />
             </Grid>
             <Grid item>
-                <Grid item container direction="column" alignItems="center">
+                <Grid item container direction="column" alignItems="flex-start">
                     <Grid item>
                         <Typography
                             variant="v6"
@@ -78,10 +78,10 @@ function gridFunction(data, index) {
 }
 
 function ProfleWithIcon(props) {
-    const { data } = props;
+    const { data, shape } = props;
     console.log("here is props", props);
 
-    return <>{data ? gridFunction(data) : null}</>;
+    return <>{data ? gridFunction(data, shape) : null}</>;
 }
 
 export default ProfleWithIcon;
