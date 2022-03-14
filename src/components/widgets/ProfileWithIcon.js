@@ -26,7 +26,7 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-function gridFunction(data, shape, index) {
+function gridFunction(data, shape, icon, index) {
     const classes = useStyles();
     console.log(classes);
 
@@ -39,13 +39,47 @@ function gridFunction(data, shape, index) {
             justifyContent="flex-start"
         >
             <Grid item>
-                <Avatar
-                    variant={shape == "rounded" ? "rounded" : "circle"}
-                    src="https://images.pexels.com/photos/4016173/pexels-photo-4016173.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
-                />
+                {icon ? (
+                    icon
+                ) : (
+                    <Avatar
+                        variant={shape == "rounded" ? "rounded" : "circle"}
+                        src="https://images.pexels.com/photos/4016173/pexels-photo-4016173.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+                    />
+                )}
             </Grid>
             <Grid item>
-                <Grid item container direction="column" alignItems="flex-start">
+                <Grid item container direction="column">
+                    <Typography
+                        variant="h6"
+                        style={{
+                            color: "black",
+                            // fontSize: "15px",
+                            marginLeft: "10px",
+                            fontWeight: "light",
+                        }}
+                    >
+                        {data.name}
+                    </Typography>
+                    <Typography
+                        variant="paragraph"
+                        style={{
+                            color: "grey",
+
+                            marginLeft: "10px",
+                            textAlign: "start",
+                        }}
+                    >
+                        {data.role}
+                    </Typography>
+                </Grid>
+                {/* <Grid
+                    item
+                    container
+                    direction="column"
+                    alignItems="flex-start"
+                    justifyContent="flex-start"
+                >
                     <Grid item>
                         <Typography
                             variant="v6"
@@ -66,22 +100,23 @@ function gridFunction(data, shape, index) {
                                 color: "black",
                                 fontSize: "10px",
                                 marginLeft: "10px",
+                                textAlign: "start",
                             }}
                         >
                             Developer
                         </Typography>
                     </Grid>
-                </Grid>
+                </Grid> */}
             </Grid>
         </Grid>
     );
 }
 
 function ProfleWithIcon(props) {
-    const { data, shape } = props;
+    const { data, shape, icon } = props;
     console.log("here is props", props);
 
-    return <>{data ? gridFunction(data, shape) : null}</>;
+    return <>{data ? gridFunction(data, shape, icon) : null}</>;
 }
 
 export default ProfleWithIcon;

@@ -8,12 +8,18 @@ import postRequest from "../../../util/APIHelperPost";
 
 export const fetchLoggedInInfoRequest = async (actions) => {
     let body = JSON.stringify({
-        username: actions.payload.userCredential.email,
+        email: actions.payload.userCredential.email,
         password: actions.payload.userCredential.password,
     });
     console.log("here is the body :", actions.payload);
     // eslint-disable-next-line no-return-await
-    return await postRequest("https://www.mecallapi.com/api/login", body)
+    // return await postRequest("https://www.mecallapi.com/api/login", body)
+    //     .then((response) => response)
+    //     .catch((error) => {
+    //         throw error;
+    //     });
+    // eslint-disable-next-line no-return-await
+    return await postRequest("http://localhost:4001/auth/", body)
         .then((response) => response)
         .catch((error) => {
             throw error;

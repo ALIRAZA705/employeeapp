@@ -69,8 +69,8 @@ function EmployeeProfile(props) {
                                 }}
                             >
                                 <Typography
-                                    variant="v5"
-                                    fontWeight="bold"
+                                    variant="h6"
+                                    // fontWeight="bold"
                                     color="gray"
                                 >
                                     Overview
@@ -92,8 +92,8 @@ function EmployeeProfile(props) {
                                 }}
                             >
                                 <Typography
-                                    variant="v5"
-                                    fontWeight="bold"
+                                    variant="h6"
+                                    // fontWeight="bold"
                                     color="gray"
                                 >
                                     Salary Details
@@ -115,8 +115,8 @@ function EmployeeProfile(props) {
                                 }}
                             >
                                 <Typography
-                                    variant="v5"
-                                    fontWeight="bold"
+                                    variant="h6"
+                                    // fontWeight="bold"
                                     color="gray"
                                 >
                                     Experience

@@ -39,10 +39,9 @@ function index(props) {
                     <div
                         style={{
                             flex: 4,
-                            overflow: "auto",
+                            overflowY: "scroll",
                             position: "relative",
-                            // height: "100%",
-                            maxHeight: "600px",
+                            maxHeight: "90vh",
                         }}
                     >
                         <Outlet />

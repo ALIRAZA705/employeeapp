@@ -3,13 +3,16 @@ import React from "react";
 import { Grid, IconButton, Paper, Typography } from "@mui/material";
 import { makeStyles } from "@material-ui/core/styles";
 // icons
-
 import PeopleOutlineIcon from "@mui/icons-material/PeopleOutline";
 // files
 import RecentPayments from "./RecentPayments";
 import PayrollSummary from "./PayrollSummary";
 import EmployeeSummary from "./EmployeeSummary";
 import DashBoardHeader from "./DashBoardHeader";
+//redux
+import { useSelector, useDispatch } from "react-redux";
+import { GetUsersInfo } from "../../../store/actions/GetUsersInfo";
+
 // styles
 const useStyles = makeStyles((theme) => ({
     button: {
@@ -31,6 +34,19 @@ const useStyles = makeStyles((theme) => ({
 
 function DashBoard(props) {
     const classes = useStyles();
+    //redux
+    const dispatch = useDispatch();
+    //redux state
+    const getUsersInfo = useSelector((state) => state.GetUsers.getUsersInfo);
+    // const authUserData = useSelector((state) => state.AuthUser.authUserData);
+
+    //lifecycle function
+    React.useEffect(() => {
+        dispatch(GetUsersInfo());
+    }, []);
+    React.useEffect(() => {
+        console.log("here is get users list", getUsersInfo);
+    }, [getUsersInfo]);
     return (
         <>
             <DashBoardHeader />
@@ -46,7 +62,7 @@ function DashBoard(props) {
                         <Grid item xs={12} container direction="row">
                             <Grid item xs={12}>
                                 <Grid item container>
-                                    <Grid item xs={7}>
+                                    <Grid item xs={8}>
                                         <Paper>
                                             <Grid
                                                 container
@@ -59,13 +75,13 @@ function DashBoard(props) {
                                                     <Typography
                                                         className={classes.text}
                                                         variant="h6"
+                                                        textAlign="start"
                                                     >
                                                         Total Payroll
                                                     </Typography>
                                                     <Typography
                                                         className={classes.text}
-                                                        fontSize="22px"
-                                                        variant="h6"
+                                                        variant="h5"
                                                     >
                                                         $ 21,5567
                                                     </Typography>
@@ -73,15 +89,15 @@ function DashBoard(props) {
                                                 <Grid item>
                                                     <Typography
                                                         className={classes.text}
-                                                        fontSize="15px"
-                                                        fontWeight="bold"
+                                                        variant="h6"
+                                                        fontWeight="semi-bold"
                                                     >
                                                         Payment Date
                                                     </Typography>
                                                     <Typography
                                                         className={classes.text}
-                                                        fontSize="16px"
-                                                        fontWeight="bold"
+                                                        variant="h6"
+                                                        // fontWeight="bold"
                                                         color="#F65D6B"
                                                     >
                                                         31/06/2020
@@ -90,8 +106,8 @@ function DashBoard(props) {
                                             </Grid>
                                         </Paper>
                                     </Grid>
-                                    <Grid item xs={1}></Grid>
-                                    <Grid item xs={4}>
+                                    <Grid item xs></Grid>
+                                    <Grid item xs={3}>
                                         <Paper>
                                             <Grid
                                                 item
@@ -125,7 +141,7 @@ function DashBoard(props) {
                                                     </Typography>
                                                     <Typography
                                                         className={classes.text}
-                                                        variant="h6"
+                                                        variant="h5"
                                                         textAlign="start"
                                                     >
                                                         72
@@ -163,13 +179,13 @@ function DashBoard(props) {
                                             <Typography
                                                 className={classes.text}
                                                 variant="h6"
+                                                textAlign="start"
                                             >
                                                 Total Payroll
                                             </Typography>
                                             <Typography
                                                 className={classes.text}
-                                                fontSize="22px"
-                                                variant="h6"
+                                                variant="h5"
                                             >
                                                 $ 21,5567
                                             </Typography>
@@ -177,15 +193,15 @@ function DashBoard(props) {
                                         <Grid item>
                                             <Typography
                                                 className={classes.text}
-                                                fontSize="15px"
-                                                fontWeight="bold"
+                                                variant="h6"
+                                                fontWeight="semi-bold"
                                             >
                                                 Payment Date
                                             </Typography>
                                             <Typography
                                                 className={classes.text}
-                                                fontSize="16px"
-                                                fontWeight="bold"
+                                                variant="h6"
+                                                fontWeight="semi-bold"
                                                 color="#F65D6B"
                                             >
                                                 31/06/2020

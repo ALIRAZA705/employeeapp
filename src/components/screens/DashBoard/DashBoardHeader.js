@@ -5,6 +5,7 @@ import { Grid, Paper, Typography } from "@mui/material";
 import { makeStyles } from "@material-ui/core/styles";
 //files
 import ProfleWithIcon from "../../widgets/ProfileWithIcon";
+
 // styles
 const useStyles = makeStyles((theme) => ({
     button: {
@@ -13,7 +14,11 @@ const useStyles = makeStyles((theme) => ({
         },
     },
 }));
-
+//constants
+const employeeDetails = {
+    name: "Account manager",
+    role: "aliraza30028@gmail.com",
+};
 function DashBoardHeader(props) {
     const classes = useStyles();
     console.log(classes);
@@ -26,11 +31,8 @@ function DashBoardHeader(props) {
             sx={{ mt: 3 }}
         >
             <Grid item xs={5} container direction="column">
-                <Typography variant="h4">WELCOME back, Oscar jr</Typography>
-                <Typography
-                    variant="h6"
-                    sx={{ paddingLeft: 1, color: "#232323" }}
-                >
+                <Typography variant="h1">Welcome back, Oscar jr</Typography>
+                <Typography variant="h6" sx={{ color: "#232323" }}>
                     Run Payroll 01-01-2022 to 01-01-2022 is pending
                 </Typography>
             </Grid>
@@ -87,10 +89,7 @@ function DashBoardHeader(props) {
                             <ArrowDropDownIcon style={{ color: "grey" }} />
                         </Grid>
                     </Grid> */}
-                    <ProfleWithIcon
-                        data={"ali.raza@servicessymphony.com"}
-                        shape={"circle"}
-                    />
+                    <ProfleWithIcon data={employeeDetails} shape={"circle"} />
                 </Paper>
             </Grid>
             <Grid item xs={1 / 2}></Grid>

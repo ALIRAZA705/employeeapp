@@ -27,7 +27,7 @@ function PayrollSummary(props) {
                 alignItems="center"
                 sx={{ my: 2, mx: 2 }}
             >
-                <Typography variant="h3" className={classes.text}>
+                <Typography variant="h6" className={classes.text}>
                     Payroll Summary
                 </Typography>
 

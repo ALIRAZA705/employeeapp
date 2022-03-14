@@ -5,6 +5,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import MUIDataTable from "mui-datatables";
 //icons
 import MoreVertIcon from "@mui/icons-material/MoreVert";
+import EmailIcon from "@mui/icons-material/Email";
 //widget
 import ProfileWithIcon from "../../widgets/ProfileWithIcon";
 import EmailWithIcon from "../../widgets/EmailWithIcon";
@@ -34,6 +35,7 @@ const useStyles = makeStyles((theme) => ({
         },
     },
 }));
+//constants
 
 const columns = [
     {
@@ -43,7 +45,13 @@ const columns = [
             filter: true,
             sort: true,
             customBodyRenderLite: (dataIndex) => (
-                <ProfileWithIcon data={data[dataIndex].employeeName} />
+                // <ProfileWithIcon data={data[dataIndex].employeeName} />
+                <ProfileWithIcon
+                    data={{
+                        name: `${data[dataIndex].employeeName}`,
+                        role: "Developer",
+                    }}
+                />
             ),
             customHeadLabelRender: (columnMeta) => (
                 <Typography variant="v6" fontWeight="bold" fontSize="15px">
@@ -62,7 +70,11 @@ const columns = [
             filter: true,
             sort: true,
             customBodyRenderLite: (dataIndex) => (
-                <EmailWithIcon data={data[dataIndex].workEmail} />
+                <EmailWithIcon
+                    data={data[dataIndex].workEmail}
+                    iconButton={true}
+                    icon={<EmailIcon style={{ color: "#568FE1" }} />}
+                />
             ),
             customHeadLabelRender: (columnMeta) => (
                 <Typography variant="v6" fontWeight="bold" fontSize="15px">

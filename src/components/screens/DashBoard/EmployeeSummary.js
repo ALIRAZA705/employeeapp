@@ -1,8 +1,10 @@
-import { Avatar, Grid, IconButton, Paper, Typography } from "@mui/material";
+import { Grid, IconButton, Paper, Typography } from "@mui/material";
 import React from "react";
 // import BookmarkIcon from "@mui/icons-material/Bookmark";
 import EmailIcon from "@mui/icons-material/Email";
 import { makeStyles } from "@material-ui/core/styles";
+import AvatarIcon from "../../Icons/AvatarIcon";
+import ProfleWithIcon from "../../widgets/ProfileWithIcon";
 // styles
 const useStyles = makeStyles((theme) => ({
     button: {
@@ -15,6 +17,12 @@ const useStyles = makeStyles((theme) => ({
         textAlign: "center",
     },
 }));
+
+//constants
+const employeeDetails = {
+    name: "Ali Raza",
+    role: "Developer",
+};
 const recentPayments = [1, 2, 3, 4, 5, 6, 7];
 
 // employee summary grid function
@@ -26,69 +34,24 @@ function EmployeSummaryGrid(props) {
             item
             container
             direction="row"
-            justifyContent="space-between"
-            sx={{ py: 2, px: 2 }}
+            justifyContent="center"
+            alignItems="center"
+            sx={{ py: 2 }}
             xs={12}
         >
-            {/* avatar */}
-            <Grid item>
-                <Grid
-                    item
-                    container
-                    direction="row"
-                    alignItems="center"
-                    justifyContent="flex-start"
-                >
-                    <Grid item>
-                        <Avatar
-                            variant="circle"
-                            src="https://images.pexels.com/photos/4016173/pexels-photo-4016173.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
-                        />
-                    </Grid>
-
-                    <Grid item>
-                        <Grid
-                            item
-                            container
-                            direction="column"
-                            alignItems="center"
-                        >
-                            <Grid item>
-                                <Typography
-                                    variant="v6"
-                                    style={{
-                                        color: "black",
-                                        fontSize: "15px",
-                                        marginLeft: "10px",
-                                        fontWeight: "bold",
-                                    }}
-                                >
-                                    Ali Raza
-                                </Typography>
-                            </Grid>
-                            <Grid item>
-                                <Typography
-                                    variant="v6"
-                                    style={{
-                                        color: "black",
-                                        fontSize: "10px",
-                                        marginLeft: "10px",
-                                    }}
-                                >
-                                    Developer
-                                </Typography>
-                            </Grid>
-                        </Grid>
-                    </Grid>
-                </Grid>
+            <Grid item xs={3}>
+                <ProfleWithIcon
+                    data={employeeDetails}
+                    icon={<AvatarIcon shape={"circle"} />}
+                />
             </Grid>
             {/* amount next */}
-            <Grid item>
+            <Grid item xs={4}>
                 <Grid
                     item
                     container
                     direction="row"
-                    justifyContent="center"
+                    justifyContent="flex-start"
                     alignItems="center"
                 >
                     <IconButton
@@ -98,24 +61,25 @@ function EmployeSummaryGrid(props) {
                         <EmailIcon style={{ color: "#568FE1" }} size="small" />
                     </IconButton>
                     <Typography
-                        variant="v6"
+                        variant="paragraph"
                         style={{
                             color: "black",
-                            fontSize: "10px",
+
                             marginLeft: "10px",
                         }}
                     >
-                        ali.raza@servicesymphony.con
+                        ali.raza30028@services.com
                     </Typography>
                 </Grid>
             </Grid>
-            <Grid item>
+
+            <Grid item xs={3} sx={{ pl: 3 }}>
                 <Typography
-                    variant="v6"
+                    variant="paragraph"
                     style={{
                         color: "#568FE1",
-                        fontSize: "12px",
-                        marginLeft: "10px",
+
+                        // marginLeft: "10px",
                         fontWeight: "bold",
                     }}
                 >
@@ -123,16 +87,16 @@ function EmployeSummaryGrid(props) {
                 </Typography>
             </Grid>
 
-            <Grid item>
+            <Grid item xs={2} sx={{ pl: 1 }}>
                 <Typography
-                    variant="v6"
+                    variant="paragraph"
                     style={{
                         color: "grey",
-                        fontSize: "12px",
-                        marginLeft: "10px",
+
+                        // marginLeft: "10px",
                     }}
                 >
-                    See Allg
+                    See All
                 </Typography>
             </Grid>
         </Grid>
@@ -149,20 +113,21 @@ function EmployeeSummary(props) {
                 container
                 xs={11}
                 justifyContent="space-between"
+                alignItems="flex-start"
                 sx={{ mx: 2, mt: 2 }}
             >
                 <Grid item>
                     <Grid item container direction="column">
                         <Grid item>
-                            <Typography variant="h3" className={classes.text}>
+                            <Typography variant="h6" className={classes.text}>
                                 Employee Summary
                             </Typography>
                         </Grid>
                         <Grid item>
                             <Typography
-                                variant="v6"
+                                variant="paragraph"
                                 className={classes.text}
-                                fontSize="12px"
+                                // fontSize="12px"
                                 color="gray"
                             >
                                 you have 72 Employess
@@ -171,18 +136,39 @@ function EmployeeSummary(props) {
                     </Grid>
                 </Grid>
                 <Grid item>
-                    <Typography
-                        variant="v6"
-                        style={{ color: "grey", fontSize: "12px" }}
-                    >
+                    <Typography variant="paragraph" style={{ color: "grey" }}>
                         See All
                     </Typography>
                 </Grid>
             </Grid>
+            <Grid
+                item
+                container
+                xs={12}
+                direction="row"
+                // justifyContent="space-between"
+                // alignItems="center"
+                sx={{ mx: 2, mt: 2 }}
+            >
+                <Grid item xs={3}>
+                    <Typography variant="h6">Employee Name</Typography>
+                </Grid>
+                <Grid item xs={4}>
+                    <Typography variant="h6">Work Email</Typography>
+                </Grid>
 
-            {recentPayments.map((data) => {
-                return <EmployeSummaryGrid data={data} key={data} />;
-            })}
+                <Grid item xs={3}>
+                    <Typography variant="h6">Cost to Company</Typography>
+                </Grid>
+
+                <Grid item xs={2}>
+                    <Typography variant="h6">Join date</Typography>
+                </Grid>
+
+                {recentPayments.map((data) => {
+                    return <EmployeSummaryGrid data={data} key={data} />;
+                })}
+            </Grid>
 
             {/* </Grid> */}
         </Paper>

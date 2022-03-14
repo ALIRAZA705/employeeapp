@@ -1,6 +1,6 @@
 import React from "react";
 // material ui
-import { Avatar, Badge, Grid, IconButton, InputBase } from "@mui/material";
+import { Badge, Grid, IconButton, InputBase } from "@mui/material";
 import { makeStyles } from "@material-ui/core/styles";
 import NotificationsNoneIcon from "@mui/icons-material/NotificationsNone";
 //icons
@@ -17,6 +17,11 @@ const useStyles = makeStyles((theme) => ({
         color: "#327AAF",
     },
 }));
+//constants
+const employeeDetails = {
+    name: "Ali Raza",
+    role: "Developer",
+};
 
 function Header(props) {
     const classes = useStyles();
@@ -24,11 +29,12 @@ function Header(props) {
     return (
         <div>
             <Grid container direction="row" style={{ marginTop: 25 }}>
-                <Grid item xs={7} sx={{ pl: 0 }}>
-                    <ProfleWithIcon data={"aliraza"} shape="rounded" />
+                <Grid item xs={6}>
+                    <ProfleWithIcon data={employeeDetails} shape="rounded" />
                 </Grid>
-                <Grid item xs={3.5}>
+                <Grid item xs={3}>
                     <InputBase
+                        variant="h6"
                         fullWidth={true}
                         style={{
                             // border: "1px solid #4f718c",
@@ -39,7 +45,7 @@ function Header(props) {
 
                             borderRadius: "10px",
                         }}
-                        placeholder="Search here "
+                        placeholder="Search Employee "
                         startAdornment={
                             <SearchIcon
                                 fontSize="large"
@@ -50,12 +56,12 @@ function Header(props) {
                     />
                 </Grid>
 
-                <Grid item xs={1}>
+                <Grid item xs={3}>
                     <IconButton>
                         <Badge
                             badgeContent={4}
                             color="secondary"
-                            // style={{ marginRight: 15, marginLeft: 15 }}
+                            sx={{ ml: 3, mr: 3 }}
                         >
                             <NotificationsNoneIcon
                                 className={classes.headerIcons}
@@ -63,16 +69,12 @@ function Header(props) {
                         </Badge>
                     </IconButton>
                     <IconButton>
-                        <Avatar
-                            variant="rounded"
-                            src="https://images.pexels.com/photos/4016173/pexels-photo-4016173.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+                        <ProfleWithIcon
+                            data={employeeDetails}
+                            shape="rounded"
                         />
                     </IconButton>
-                    {/* <IconButton>
-                        <PersonIcon className={classes.headerIcons} />
-                    </IconButton> */}
                 </Grid>
-                <Grid item xs={1 / 2}></Grid>
             </Grid>
         </div>
     );

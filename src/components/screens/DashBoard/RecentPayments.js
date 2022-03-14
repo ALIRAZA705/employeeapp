@@ -1,7 +1,9 @@
-import { Avatar, Grid, Paper, Typography } from "@mui/material";
+import { Grid, Paper, Typography } from "@mui/material";
 import React from "react";
 import BookmarkIcon from "@mui/icons-material/Bookmark";
 import { makeStyles } from "@material-ui/core/styles";
+import ProfleWithIcon from "../../widgets/ProfileWithIcon";
+import AvatarIcon from "../../Icons/AvatarIcon";
 // styles
 const useStyles = makeStyles((theme) => ({
     button: {
@@ -15,6 +17,11 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 const recentPayments = [1, 2, 3, 4, 5, 6, 7];
+//constants
+const employeeDetails = {
+    name: "Ali Raza",
+    role: "Developer",
+};
 //recent payment grid function
 function RecentPaymentGrid(props) {
     const { key } = { props };
@@ -30,7 +37,7 @@ function RecentPaymentGrid(props) {
         >
             {/* avatar */}
             <Grid item>
-                <Grid
+                {/* <Grid
                     item
                     container
                     direction="row"
@@ -43,7 +50,7 @@ function RecentPaymentGrid(props) {
                             src="https://images.pexels.com/photos/4016173/pexels-photo-4016173.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
                         />
                     </Grid>
-                    {/* <Grid item container direction="column"> */}
+
                     <Grid item>
                         <Grid
                             item
@@ -76,12 +83,20 @@ function RecentPaymentGrid(props) {
                                 </Typography>
                             </Grid>
                         </Grid>
-                    </Grid>
-                </Grid>
+                    </Grid> */}
+                <ProfleWithIcon
+                    data={employeeDetails}
+                    icon={<AvatarIcon shape={"rounded"} />}
+                />
+                {/* </Grid> */}
             </Grid>
             {/* amount next */}
             <Grid item>
-                <Grid
+                <ProfleWithIcon
+                    data={employeeDetails}
+                    icon={<BookmarkIcon style={{ color: "gray" }} />}
+                />
+                {/* <Grid
                     item
                     container
                     direction="row"
@@ -91,7 +106,7 @@ function RecentPaymentGrid(props) {
                     <Grid item>
                         <BookmarkIcon />
                     </Grid>
-                    {/* <Grid item container direction="column"> */}
+
                     <Grid item>
                         <Grid
                             item
@@ -125,25 +140,25 @@ function RecentPaymentGrid(props) {
                             </Grid>
                         </Grid>
                     </Grid>
-                </Grid>
+                </Grid> */}
             </Grid>
 
             <Grid item>
                 <Typography
-                    variant="v6"
+                    variant="paragraph"
                     style={{
                         color: "grey",
-                        fontSize: "12px",
+                        // fontSize: "12px",
                         marginLeft: "10px",
                     }}
                 >
-                    See Allg
+                    See All
                 </Typography>
             </Grid>
         </Grid>
     );
 }
-
+//main function
 function RecentPayments(props) {
     const classes = useStyles();
     return (
@@ -156,7 +171,7 @@ function RecentPayments(props) {
                 alignItems="center"
                 sx={{ mx: 2, mt: 2 }}
             >
-                <Typography variant="h3" className={classes.text}>
+                <Typography variant="h6" className={classes.text}>
                     Recent Payments
                 </Typography>
 

@@ -55,7 +55,7 @@ function GoogleAuth() {
             console.log("here is failure");
         }
     };
-
+    console.log(handlelogout);
     return (
         <>
             <GoogleLogin
@@ -83,9 +83,9 @@ function GoogleAuth() {
                 onFailure={onLoginFailure}
                 cookiePolicy={"single_host_origin"}
             />
-            <button type="button" onClick={handlelogout}>
+            {/* <button type="button" onClick={handlelogout}>
                 Logout
-            </button>
+            </button> */}
         </>
     );
 }

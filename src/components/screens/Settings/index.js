@@ -1,140 +1,143 @@
 import React from "react";
 // material ui
+import { Grid, Paper, Typography, Divider } from "@mui/material";
 import { makeStyles } from "@material-ui/core/styles";
-import { Grid, Paper, Typography } from "@mui/material";
-import Profile from "./Profile";
-import ManageUser from "./ManageUser";
+//router
+import {
+    useNavigate,
+    useLocation,
+    useMatch,
+    Outlet,
+    useParams,
+} from "react-router-dom";
 
 // styles
 const useStyles = makeStyles((theme) => ({
-    root: {
-        backgroundColor: "#E8EFF7",
+    icon: {
+        color: "#568FE1",
+        size: "small",
+        marginTop: 2,
     },
-    headings: {
-        color: "#186AA5",
-        fontSize: 20,
-        // fontWeight: "bold",
-    },
-    title: {
-        color: "#8DB5D3",
-    },
-    selectedTitle: {
-        height: 4,
-        backgroundColor: "#518EBB",
-        border: "none",
-    },
-    TextField: {
-        marginTop: "0.2vh",
-        marginBottom: "2vh",
-        transition: "0.5s all",
-        width: "100% !important",
-        background: "white",
-        "& .MuiInputLabel-outlined": {
-            color: "#73A1C2",
-        },
+    divider: {
+        // mt: 1,
+        borderBottomWidth: 13,
     },
 }));
-
-function index(props) {
+function Index(props) {
     const classes = useStyles();
-    // component state
-    const [selectedTitle, setSelectedTitle] = React.useState("Profile");
+    const navigate = useNavigate();
+    const location = useLocation();
+    const param = useParams();
+    const match = useMatch("/overview");
+
+    console.log(location, match, param);
+    //local states
+    const [option, selectedOption] = React.useState("Overview");
+    console.log(classes, option);
+    //function
+    const handleSelectOption = (opt) => {
+        selectedOption(opt);
+        navigate(`${opt.toLowerCase()}`);
+    };
+    React.useEffect(() => {}, []);
     return (
-        <>
-            <Grid
-                container
-                direction="row"
-                justifyContent="flex-start"
-                alignItems="flex-start"
-            >
-                <Grid item>
-                    <Typography
-                        className={classes.headings}
-                        variant="h4"
-                        // sx={{ mx: 4 }}
-                    >
-                        Settings
-                    </Typography>
-                </Grid>
+        <Grid container direction="row" sx={{ mt: 3 }}>
+            <Grid item>
+                <Typography variant="h5" fontWeight="bold">
+                    Settings
+                </Typography>
             </Grid>
-            <Grid
-                item
-                container
-                direction="row"
-                justifyContent="space-between"
-                alignItems="flex-start"
-                xs={7}
-                sx={{ mt: 5 }}
-            >
-                {/* <Grid item xs={1}></Grid> */}
-                <Grid item>
-                    <Typography
-                        className={classes.title}
-                        variant="h6"
-                        onClick={() => setSelectedTitle("Profile")}
-                    >
-                        Profile
-                    </Typography>
-                    {selectedTitle == "Profile" && (
-                        <hr className={classes.selectedTitle} />
-                    )}
-                </Grid>
-                <Grid item>
-                    <Typography
-                        className={classes.title}
-                        variant="h6"
-                        onClick={() => setSelectedTitle("Manage Roles")}
-                    >
-                        Manage Roles
-                    </Typography>
-                    {selectedTitle == "Manage Roles" && (
-                        <hr className={classes.selectedTitle} />
-                    )}
-                </Grid>
-                <Grid item>
-                    <Typography
-                        className={classes.title}
-                        variant="h6"
-                        onClick={() => setSelectedTitle("Company Profile")}
-                    >
-                        Company Profile
-                    </Typography>
-                    {selectedTitle == "Company Profile" && (
-                        <hr className={classes.selectedTitle} />
-                    )}
-                </Grid>
-            </Grid>
-            <Grid
-                container
-                direction="column"
-                justifyContent="flex-start"
-                alignItems="flex-start"
-                xs={11}
-                md={11}
-                lg={11}
-                sx={{ height: "70vh", overflow: "scroll" }}
-            >
-                <Paper sx={{ width: "100%" }}>
-                    {selectedTitle == "Profile" ? (
+            <Grid item container driection="row" xs={12} sx={{ mt: 3 }}>
+                <Grid item xs={12}>
+                    <Paper>
                         <Grid
                             item
                             container
-                            xs={12}
-                            md={12}
-                            lg={12}
                             direction="row"
+                            justifyContent="space-around"
+                            alignItems="flex-start"
+                            sx={{ p: 3, pb: 0 }}
+                            xs={5}
                         >
-                            <Profile />
+                            <Grid
+                                item
+                                onClick={() => {
+                                    handleSelectOption("profile");
+                                }}
+                            >
+                                <Typography
+                                    variant="h6"
+                                    // fontWeight="bold"
+                                    color="gray"
+                                >
+                                    Profile
+                                </Typography>
+                                {option == "profile" && (
+                                    <Divider
+                                        sx={{
+                                            mt: 1,
+                                            borderBottomWidth: 3,
+                                        }}
+                                        color="#6B9CE3"
+                                    />
+                                )}
+                            </Grid>
+                            <Grid
+                                item
+                                onClick={() => {
+                                    handleSelectOption("manageRoles");
+                                }}
+                            >
+                                <Typography
+                                    variant="h6"
+                                    // fontWeight="bold"
+                                    color="gray"
+                                >
+                                    Manage Roles
+                                </Typography>
+                                {option == "manageRoles" && (
+                                    <Divider
+                                        sx={{
+                                            mt: 1,
+                                            borderBottomWidth: 3,
+                                        }}
+                                        color="#6B9CE3"
+                                    />
+                                )}
+                            </Grid>
+                            <Grid
+                                item
+                                onClick={() => {
+                                    handleSelectOption("companyprofile");
+                                }}
+                            >
+                                <Typography
+                                    variant="h6"
+                                    // fontWeight="bold"
+                                    color="gray"
+                                >
+                                    Company Profile
+                                </Typography>
+                                {option == "companyprofile" && (
+                                    <Divider
+                                        sx={{
+                                            mt: 1,
+                                            borderBottomWidth: 3,
+                                        }}
+                                        color="#6B9CE3"
+                                    />
+                                )}
+                            </Grid>
                         </Grid>
-                    ) : selectedTitle == "Manage Roles" ? (
-                        <Grid item>
-                            <ManageUser />
-                        </Grid>
-                    ) : null}
-                </Paper>
+                    </Paper>
+                </Grid>
+
+                <Grid item xs={11} sx={{ mt: 4 }}>
+                    <Outlet />
+                </Grid>
             </Grid>
-        </>
+        </Grid>
     );
 }
 
-export default index;
+export default Index;

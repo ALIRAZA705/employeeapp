@@ -56,10 +56,11 @@ function gridFunction(data, iconButton, icon, fontsize) {
                 CheckIcon(icon)
             )}
             <Typography
-                variant="v6"
+                variant="paragraph"
                 style={{
                     color: "black",
-                    fontSize: fontsize,
+
+                    fontWeight: "bold",
                     marginLeft: "10px",
                 }}
             >

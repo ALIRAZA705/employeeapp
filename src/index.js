@@ -21,21 +21,41 @@ const Theme = createTheme({
     typography: {
         useNextVariants: true,
 
-        h6: {
-            fontSize: 20,
-            fontWeight: "bold",
-
-            // color: "#3A80B2",
-            letterSpacing: "0.0075em",
-        },
-        h4: {
+        //headline
+        h1: {
             fontSize: "35px",
             fontWeight: "bold",
         },
+        //Form label text field
+        h2: {
+            fontSize: "14px",
+            fontWeight: "600",
+            color: "gray",
+        },
         //titles
         h3: {
-            fontSize: "18px",
+            fontSize: "15px",
             fontWeight: "bold",
+        },
+        //headers
+        h4: {
+            fontSize: "32x",
+            fontWeight: "bold",
+        },
+        h5: {
+            fontSize: "25",
+            fontWeight: "bolder",
+        },
+        //total payroll
+        h6: {
+            fontSize: "16px ",
+            fontWeight: "bold",
+
+            // color: "#3A80B2",
+            // letterSpacing: "0.0075em",
+        },
+        paragraph: {
+            fontSize: "12px",
         },
     },
 
@@ -44,11 +64,20 @@ const Theme = createTheme({
             styleOverrides: {
                 root: {
                     padding: 5,
-                    height: "100%",
+                    // height: "100%",
+
                     borderRadius: 15,
                 },
             },
         },
+        MuiCheckbox: {
+            styleOverrides: {
+                root: {
+                    color: "black",
+                },
+            },
+        },
+        // MUIDataTableFilter-checkbox
     },
 });
 const store = configureStore();

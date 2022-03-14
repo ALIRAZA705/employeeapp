@@ -18,7 +18,10 @@ export default (state = INIT_STATE, action) => {
             };
         case LOGGED_IN_USER_INFO_SUCCESS:
             if (action.payload.status == "ok") {
-                localStorage.setItem("accessToken", action.payload.accessToken);
+                localStorage.setItem(
+                    "accessToken",
+                    JSON.stringify(action.payload)
+                );
                 return {
                     ...state,
                     loadingLoggedInUserData: false,
@@ -27,6 +30,7 @@ export default (state = INIT_STATE, action) => {
             }
         // eslint-disable-next-line no-fallthrough
         case LOGGED_IN_USER_INFO_FAILURE:
+            console.log("here is failure");
             localStorage.removeItem("accessToken");
             return {
                 ...state,

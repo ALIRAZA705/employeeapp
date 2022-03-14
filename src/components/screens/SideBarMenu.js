@@ -1,6 +1,6 @@
 import React from "react";
 // material ui
-import { Grid, Typography } from "@mui/material";
+import { Divider, Grid, Toolbar, Typography } from "@mui/material";
 import { makeStyles } from "@material-ui/core/styles";
 import {
     Box,
@@ -9,13 +9,14 @@ import {
     ListItemIcon,
     ListItemText,
 } from "@material-ui/core";
-//icnos
-
+//redux
+import { useSelector, useDispatch } from "react-redux";
 // import MailIcon from "@mui/icons-material/Mail";
 // import SettingsIcon from "@mui/icons-material/Settings";
 import { Apps, Mail, Payment, Settings, AddCircle } from "@material-ui/icons";
 //router
 import { useNavigate } from "react-router-dom";
+import { LogoutUser } from "../../store/actions/Logout";
 
 //styles
 const useStyles = makeStyles({
@@ -37,7 +38,19 @@ const menuItems = [
 function SideBarMenu(props) {
     const classes = useStyles();
     const navigate = useNavigate();
-
+    //redux
+    const dispatch = useDispatch();
+    // redux state
+    const logoutUserdata = useSelector((state) => state.Logout.logoutUserdata);
+    console.log("here is logout", logoutUserdata);
+    // lifecycle method
+    // React.useEffect(() => {
+    //     if (logoutUserdata.ok) {
+    //         localStorage.removeItem("accessToken");
+    //         localStorage.removeItem("refreshToken");
+    //         navigate("/");
+    //     }
+    // }, [logoutUserdata]);
     return (
         <Grid
             container
@@ -83,19 +96,31 @@ function SideBarMenu(props) {
                                 </ListItem>
                             ))}
                         </List>
-                        {/* <Divider />
+                        <Divider />
+                        <Toolbar />
+
                         <List>
-                            {["All mail", "Trash", "Spam"].map(
-                                (text, index) => (
-                                    <ListItem button key={text}>
-                                        <ListItemIcon>
-                                            <InboxIcon />
-                                        </ListItemIcon>
-                                        <ListItemText primary={text} />
-                                    </ListItem>
-                                )
-                            )}
-                        </List> */}
+                            <ListItem
+                                button
+                                onClick={() => {
+                                    dispatch(LogoutUser());
+                                }}
+                            >
+                                <ListItemIcon>
+                                    <Mail />
+                                </ListItemIcon>
+                                <ListItemText
+                                    primary={
+                                        <Typography
+                                            variant="caption"
+                                            color="black"
+                                        >
+                                            Logout
+                                        </Typography>
+                                    }
+                                />
+                            </ListItem>
+                        </List>
                     </Grid>
                 </Box>
             </Grid>
